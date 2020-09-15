@@ -5,8 +5,6 @@ date:   2020-09-14 14:30:37 -0400
 categories: Research
 ---
 
-## Market Questionnaire
-
 ### Relevant market sectors this research potentially falls into
 
 Game balance is a crucial design process in the Entertainment business. For any artificially created rules and balances in a game, there needs to be a game balance process to ensure an intended and fair experience for the consumers. Game balance is especially crucial for the video game industry which I will be focusing my research on. 
