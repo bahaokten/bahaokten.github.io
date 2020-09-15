@@ -5,6 +5,7 @@ date:   2020-09-12 12:30:37 -0400
 categories: Research
 ---
 
+## Finding Papers
 To start my research on Project Seesaw, 
 I first had to compile a list of potentially useful research papers and articles.
 
@@ -45,3 +46,21 @@ Then, I read the abstract section of each paper and pointed the paper a relevanc
 |   29|Rarity and Power: Balance in Collectible Object Games|[Click Here](http://gamestudies.org/1001/articles/ham?utm_source=twitterfeed&utm_medium=twitter)|2+ (non-videogame perspective|
 |   30|Game team balancing by using particle swarm optimization|[Click Here](https://www.sciencedirect.com/science/article/abs/pii/S0950705112000603)|1 (similar to other papers)|
 |   31|Solving the Balance Problem of On-Line Role-Playing Games Using Evolutionary Algorithms|[Click Here](https://www.scirp.org/html/6-9301435_21950.htm)|1 (similar to other papers)|
+
+## Reading the 5 most relevant papers according to their relevancy score
+
+#### 2: Evaluating Competitive Game Balance with Restricted Play
+
+Balancing is difficult and time-consuming. Expensive development tuning cycles for subtle adjustments where each tweak involves substantial playtesting and designer intuition. Small tweaks can have unexpected consequences, so it is hard to test how tuning affects the gameplay. Current AI technologies cannot keep up with the diversity of viable strategies in complex games. Suggests reducing complex gameplay to restricted measures that are then used to test parts of the game.
+#### 8: On the Impact of Software Patching on Gameplay for the League of Legends Computer Game
+
+LoL has been patched over 160 times since its release in 2009 with an average of about 1.5 patch files per month. LoL devs have access to millions of games, over 450,000 between Seasons 4-6. Analyzes how Riot patches the game and how these patches effect game length, champion ban/pick rate, item usage rate etc.
+#### 15: Establishing Competitive Domination Cycles for Peer-to-peer Game Combat
+
+The paper investigates if domination loops can be determined using agents in a rock, scissors, paper style approach. The paper concludes that domination loops do exists in the context of single unit combat scenarios. Their models and methods are capable of finding frequent examples of units in a cyclic dominance relationship.
+#### 16: A Competitive Markov Approach to the Optimal Combat Strategies of On-Line Action Role-Playing Game Using Evolutionary Algorithms
+
+Divides combat strategies into three distinct classes, Strategy of Motion, Strategy of Attacking Occasion, and Strategy of Using Skill. They analyze such strategies of a basic game model in which the combat is modeled by the discrete competitive Markov decision process. They focus on how SUS (Strategy of Using Skill) pairs can be balanced using coevolution and CCEA.
+#### 20: Automatic Playtesting for Game Parameter Tuning via Active Learning
+
+Playtesting for finetuning a game is expensive. The paper shows that active learning techniques can formalize and automate a subset of playtesting goals. They argue that parameter tuning can be automated to reduce the cost of playtesting to achieve a design goal by intelligently picking designs to test.
