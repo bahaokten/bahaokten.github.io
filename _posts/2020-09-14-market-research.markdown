@@ -63,6 +63,8 @@ Ludible is a company that offers tools for balancing a game's numeric variables 
 
 Askblu.ai is a service aimed to help mobile games find the optimum difficulty for the overall audience of players. Askblu uses plug&play real-time machine learning to increase player retention in mobile games.
 
+OpenAI is an AI research and deployment company. Their mission is to ensure that artificial general intelligence benefits all of humanity.
+
 ### Citations
 
 1) https://www.theesa.com/press-releases/u-s-video-game-sales-reach-record-breaking-43-4-billion-in-2018/
