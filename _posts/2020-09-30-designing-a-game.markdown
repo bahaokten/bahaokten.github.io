@@ -14,6 +14,8 @@ On that note, while designing **Super Rock Paper Scissors**, I had to think care
 #### Concise and Independent Variables
 Variables critical to gameplay had to be well-defined and each variable ideally had to affect the gameplay in a single independent factor (as in critical variables should not depend on each other's value too much). I predict that keeping variables concise and indepent will make it easier to isolate certain gameplay mechanics and focus the game balance tools on each mechanic one by one. (Something similar to what is suggested in [1])
 
+![m](/Resources/VARS.PNG)
+
 #### A Secondary User Interface
 For balancing **Super Rock Paper Scissors** I wanted the game to be fully playable without a GUI, so that the game can also be played by the AI. I created an API that allows one or both players to be controlled by AI. 
 
@@ -32,7 +34,9 @@ AI plays the game using the PlayerAPI. The PlayerAPI has similar capabilities to
 
 ![m](/Resources/CodeAmount1.PNG)
 
-### How to Play? (Updated)
+### How to Play Super Rock Paper Scissors? (Updated)
+
+![m](/Resources/RPSGIF1.gif)
 
 #### **Round Structure**
 
@@ -83,6 +87,12 @@ A good rock paper scissors will aim to have a perfectly randomized patters while
 Super Rock Paper Scissors aims to amplify the guessing stage by altering the relative power dynamics within rock, paper, scissor.
 For example, when a player invests coins to upgrade their rock, they will have a winning matchup against your rock. They might have a bigger incentive to play rock more often since their rock now has 2 winning matchups out of 3 possible. 
 
+### Update On The Metroid-Like Platformer
+
+Refactored old unfinished platformer game to make it compatible with balancing tools.
+
+![m](/Resources/PlatformerGIF1.gif)
+
 ### Links
 
 **Github repo for Super Rock Paper Scissors: [Click Here](https://github.com/bahaokten/Research_RPC)**
@@ -97,3 +107,16 @@ For example, when a player invests coins to upgrade their rock, they will have a
 **Also, RIP 30 minutes of Unity scene changes :/**
 
 ![m](/Resources/RIP.jpg)
+
+**Weekly Time Spent On Project SeeSaw**
+
+| Day  | Hours Spent |
+|:-:|:-:|
+| Thu | 0| 
+| Fri | 0| 
+| Sat | 0| 
+| Sun | 2:30| 
+| Mon | 5:00| 
+| Tue | 5:30| 
+| Wed | 1:00|
+|TOTAL | 14:00| 
