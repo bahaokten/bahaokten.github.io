@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Designing a Game With Balance In Mind"
-date:   2020-09-23 12:30:37 -0400
+date:   2020-09-30 12:30:37 -0400
 categories: Experimentation
 ---
 
