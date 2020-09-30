@@ -92,3 +92,8 @@ For example, when a player invests coins to upgrade their rock, they will have a
 ### Citations
 
 1) https://homes.cs.washington.edu/~zoran/jaffe2012ecg.pdf
+
+
+**Also, RIP 30 minutes of Unity scene changes :/**
+
+![m](/Resources/RIP.jpg)
