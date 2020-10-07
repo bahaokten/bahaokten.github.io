@@ -7,7 +7,7 @@ categories: Experimentation
 
 ## Initial Experimentation
 
-As I was experimenting with game balance, I realized that I wouldn't be getting solid results and data this week since I needed to have a medium where I can test game balance first.So I've come up with 2 initial game projects to conduct experiments on in the following weeks. This initial work over-head has shaken my confidence a bit, because I realized I would have to first create a solid medium to conduct my research on.
+As I was experimenting with game balance, I realized that I wouldn't be getting solid results and data this week since I needed to have a medium where I can test game balance first. So I've come up with 2 initial game projects to conduct experiments on in the following weeks. This initial work over-head has shaken my confidence a bit, because I realized I would have to first create a solid medium to conduct my research on.
 
 ### Turn-based Rock Paper Scissors with upgrades and action cards. 
 

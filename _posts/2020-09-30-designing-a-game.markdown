@@ -49,7 +49,7 @@ You start the game with 5 coins and 0 score.
 
 #### **Winning Rounds and Score System**
 
-You win the round if you correctly pick the weapon that counters your opponent's weapon. For example if you picked scissor and your opponent picked rock, you win the round and gain +1 score.
+You win the round if you correctly pick the weapon that counters your opponent's weapon. For example, if you picked scissor and your opponent picked rock, you win the round and gain +1 score.
 However, if you both pick the same weapon, then the player with the highest attack attribute on their weapon wins.
 
 The first person to reach a certain score wins the game.
