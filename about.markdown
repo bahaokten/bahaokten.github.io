@@ -4,4 +4,4 @@ title: About
 permalink: /about/
 ---
 
-To Do
+Project SeeSaw aims to discover methodologies and patters used in game balance practices.

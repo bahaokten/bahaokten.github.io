@@ -54,7 +54,6 @@ Explains AI decision making from several design patterns. Goes over decision tre
 3) https://www.gamedev.net/tutorials/programming/artificial-intelligence/the-total-beginners-guide-to-game-ai-r4942/
 
 
-
 **Weekly Time Spent On Project SeeSaw**
 
 | Day  | Hours Spent |
