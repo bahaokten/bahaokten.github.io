@@ -13,6 +13,8 @@ Started designing AI that would play the game in unique ways. There are currentl
 I plan to make these AI play against each other while a logger script keeps track of game length, popular weapons, popular upgrades, popular cards, number of stalemates, 
 win percentage per strategy, card and upgrade usefulness (does buying cards or upgrading weapons increase your chances of winning), defense vs attack based strategy win ratios and potentially more datapoints.
 
+![m](/Resources/RPSGIF2.gif)
+
 #### Base AI
 
 All AI scripts extend the base AI class which has virtual functions for each phase (Buy, Action, Attack).
