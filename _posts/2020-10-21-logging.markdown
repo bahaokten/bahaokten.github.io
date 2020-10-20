@@ -1,0 +1,147 @@
+---
+layout: post
+title:  "Logging"
+date:   2020-10-21 10:30:37 -0400
+categories: Logging,AI
+---
+
+### First Game Balance Change Before Logging tools and Advanced AI
+
+**Observation** 
+
+AI that focuses on upgrading Defense and/or using Defense-buff cards tend to lose more often than attack-centric AI.
+
+**Deduction** 
+
+Defense buffs never give you a winning edge over your opponent. Defense is only useful when you lose the round and you want to minimize your opponent's earnings. Defense buffs are either too expensive or defense is a redundant attribute.
+
+**Solution**
+To give defense attribue a purpose, I decided to make defense have an impact on picking the round winner.
+
+**Balance Changes**
+
+When both players pick the same weapon, their weapon's Attack and Defense attributes are summed up. Whichever player has the greatest sum win the round. Coins are calculated as ```winner's sum - loser's sum + 1```
+
+**Conclusion**
+
+Since defense is also cheaper to upgrade, this means it's crucial to have high defense in Weapon X vs Weapon X rounds to both win the round and earn large amount of coins that you would not be able to win in any other X vs Y round.
+
+So now defense has a role in deciding the round winner, as well as acting as a trump card to win a lot of coins in one round.
+
+I am amazed that even in the early stages of creating AI and Logging tools to balance the game, the tools are already helping me find out glaring issues with the game design.
+
+### First Bug Discovered By Simple AI
+
+**Expectation**
+
+When a card is used, its effect is active only for the next round.
+
+**Observation**
+
+When greedy attacker uses a card, its effect sometimes lasts for multiple rounds
+
+**Solution**
+
+Fixed the code where the child card class was wrongly calling its parent's disable function.
+
+### Logger
+
+**Logger writes to 2 files:** 
+
+* A text file keeping track of events and actions vs time
+
+* A CSV file keeping track of reports generated at the end of a game consisting of over 50+ datapoints of information.
+
+#### Example Text Log
+
+![m](/Resources/LogTxt1.PNG)
+
+#### Example CSV Data Log (1 Game, Transposed)
+
+| Datapoint Number | Datapoint Name | Value |
+|:-:|:-:|:-:|
+| 0 | LPlayerType | Human | 
+| 1 | RPlayerType | Simp_ScissorLover | 
+| 2 | GameWinner | R | 
+| 3 | TotalRounds | 3 |
+| 4 | NumLRoundWins | 1 |
+| 5 | NumRRoundWins | 2 |
+| 6 | NumStalemates | 0 |
+| 7 | LLongestWinStreak | 1 |
+| 8 | RLongestWinStreak | 2 |
+| 9 | LTotalCards | 2 |
+| 10 | RTotalCards | 0 |
+| 11 | LTotalUpgrades | 1 |
+| 12 | RTotalUpgrades | 1 |
+| 13 | LWeaponUsage_Scissor | 1 |
+| 14 | LWeaponWins_Scissor | 1 |
+| 15 | LWeaponUsage_Paper | 2 |
+| 16 | LWeaponWins_Paper | 0 |
+| 17 | LWeaponUsage_Rock | 0 |
+| 18 | LWeaponWins_Rock | 0 |
+| 19 | RWeaponUsage_Scissor | 3 |
+| 20 | RWeaponWins_Scissor | 2 |
+| 21 | RWeaponUsage_Paper | 0 |
+| 22 | RWeaponWins_Paper | 0 |
+| 23 | RWeaponUsage_Rock | 0 |
+| 24 | RWeaponWins_Rock | 0 |
+| 25 | LWeaponUsage%_Scissor | 0.333|
+| 26 | LWeaponWins%_Scissor | 1 |
+| 27 | LWeaponUsage%_Paper | 0.667 |
+| 28 | LWeaponWins%_Paper | 0 |
+| 29 | LWeaponUsage%_Rock | 0 |
+| 30 | LWeaponWins%_Rock | 0 |
+| 31 | RWeapoNUsage%_Scissor | 1|
+| 32 | RWeaponWins%_Scissor | 0.667 |
+| 33 | RWeaponUsage%_Paper | 0 |
+| 34 | RWeaponWins%_Paper | 0 |
+| 35 | RWeaponUsage%_Rock | 0 |
+| 36 | RWeaponWins%_Rock | 0 |
+| 37 | LUpgrade_Scissor_Attack | 0 |
+| 38 | LUpgrade_Scissor_Defense | 0 |
+| 39 | LUpgrade_Paper_Attack | 0 |
+| 40 | LUpgrade_Paper_Defense | 1 |
+| 41 | LUpgrade_Rock_Attack | 0 |
+| 42 | LUpgrade_Rock_Defense | 0 |
+| 43 | RUpgrade_Scissor_Attack | 1 |
+| 44 | RUpgrade_Scissor_Defense | 0 |
+| 45 | RUpgrade_Paper_Attack | 0 |
+| 46 | RUpgrade_Paper_Defense | 0 |
+| 47 | RUpgrade_Rock_Attack | 0 |
+| 48 | RUpgrade_Rock_Defense | 0 |
+| 49 | LSelfAttackIncreaseAdditiveCurrent1 | 1 |	
+| 50 | LSelfDefenseIncreaseAdditiveCurrent1 | 1 |
+| 51 | RSelfAttackIncreaseAdditiveCurrent1 | 0 |
+| 52 | RSelfDefenseIncreaseAdditiveCurrent1 | 0 |
+
+
+
+https://www.reddit.com/r/Unity3D/comments/6qg197/readingwriting_csvs_in_unity/
+https://forum.unity.com/threads/using-external-libraries-in-unity.410741/
+https://gamedev.stackexchange.com/questions/166401/use-a-different-target-framework-version-in-a-unity-c-project-other-than-4-6
+
+
+### Links
+
+**Github repo for Super Rock Paper Scissors: [Click Here](https://github.com/bahaokten/Research_RPC)**
+
+**Webbuild: [Click Here]({{ site.baseurl }}{% link Builds/Week5/index.html %})**
+
+
+**Current Project Code Structure Of Super Rock Paper Scissors**
+
+
+
+**Weekly Time Spent On Project SeeSaw**
+
+| Day  | Hours Spent |
+|:-:|:-:|
+| Wed | 3:00| 
+| Thu | 0| 
+| Fri | 0| 
+| Sat | 0| 
+| Sun | 4:00| 
+| Mon | 4:00| 
+| Tue | 0| 
+| Wed | 3:00|
+|TOTAL | 14:00| 
