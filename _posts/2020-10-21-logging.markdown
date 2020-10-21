@@ -5,7 +5,15 @@ date:   2020-10-21 10:30:37 -0400
 categories: Logging,AI
 ---
 
-### First Game Balance Change Before Logging tools and Advanced AI
+### Logging
+
+This week I was able to implement a solid framework for logging and automated testing.
+
+When I was initially creating the automated logging framework, I immediately started finding bugs and balance issues. They ranged from minor visual errors, to game crashing bugs. So in some sense, implementing the testing framework itself was the first integration test Super Rock Paper Scissors went through. 
+
+Once all bugs got fixed, I put it to test by making simple AI play the game. Even with simple AI, the logs revelead the first plausible game balance change.
+
+### First Game Balance Change Discovered by Logging and AI
 
 **Observation** 
 
@@ -56,7 +64,7 @@ Fixed the code where the child card class was wrongly calling its parent's disab
 
 ![m](/Resources/LogTxt1.PNG)
 
-#### Example CSV Data Log (1 Game, Transposed)
+#### Example CSV Data Log (1 Game, Transposed 90 Degrees)
 
 | Datapoint Number | Datapoint Name | Value |
 |:-:|:-:|:-:|
@@ -114,11 +122,35 @@ Fixed the code where the child card class was wrongly calling its parent's disab
 | 51 | RSelfAttackIncreaseAdditiveCurrent1 | 0 |
 | 52 | RSelfDefenseIncreaseAdditiveCurrent1 | 0 |
 
+#### Example log files with 300 games of data
 
+[CSV_LOG]({{ site.url }}/Download/log_10-21-2020_11-18-22.csv)
 
-https://www.reddit.com/r/Unity3D/comments/6qg197/readingwriting_csvs_in_unity/
-https://forum.unity.com/threads/using-external-libraries-in-unity.410741/
-https://gamedev.stackexchange.com/questions/166401/use-a-different-target-framework-version-in-a-unity-c-project-other-than-4-6
+[TXT_LOG]({{ site.url }}/Download/log_10-21-2020_11-18-22.txt)
+
+![m](/Resources/Excel.PNG)
+
+### Unity Based Research
+
+This week's work required me do research on couple of the topics listed below:
+
+[Reading/Writing To Files in Unity](https://www.reddit.com/r/Unity3D/comments/6qg197/readingwriting_csvs_in_unity/)
+
+[Using External CSharp Libraries Within Unity](https://forum.unity.com/threads/using-external-libraries-in-unity.410741/)
+
+[Using Different Target Framework Version With Unity C project](https://gamedev.stackexchange.com/questions/166401/use-a-different-target-framework-version-in-a-unity-c-project-other-than-4-6)
+
+### The hour long hunt to find a 1-liner bug
+
+The code below somehow does not load the menu scene and does not throw a warning or error
+
+![m](/Resources/Bug2b.PNG)
+
+![m](/Resources/Bug2c.PNG)
+
+When the menu scene does not load, the game gets stuck in an infinite game loop.
+
+Turns out the scene was not loading because I forgot to unsubsribe one of the subscriptions. The floating subscription started a chain of events which eventually stopped the scene from changing.
 
 
 ### Links
@@ -130,18 +162,17 @@ https://gamedev.stackexchange.com/questions/166401/use-a-different-target-framew
 
 **Current Project Code Structure Of Super Rock Paper Scissors**
 
+![m](/Resources/CodeAmount3.PNG)
 
-
-**Weekly Time Spent On Project SeeSaw**
+**Weekly Time Spent on Project SeeSaw**
 
 | Day  | Hours Spent |
 |:-:|:-:|
-| Wed | 3:00| 
 | Thu | 0| 
 | Fri | 0| 
-| Sat | 0| 
-| Sun | 4:00| 
-| Mon | 4:00| 
-| Tue | 0| 
-| Wed | 3:00|
+| Sat | 1:15| 
+| Sun | 5:30| 
+| Mon | 3:45| 
+| Tue | 2:00| 
+| Wed | 0|
 |TOTAL | 14:00| 
