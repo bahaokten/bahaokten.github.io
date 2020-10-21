@@ -144,9 +144,9 @@ This week's work required me do research on couple of the topics listed below:
 
 The code below somehow does not load the menu scene and does not throw a warning or error
 
-![m](/Resources/Bug2b.PNG)
+![m](/Resources/Bug2.PNG)
 
-![m](/Resources/Bug2c.PNG)
+![m](/Resources/bug2c.PNG)
 
 When the menu scene does not load, the game gets stuck in an infinite game loop.
 
