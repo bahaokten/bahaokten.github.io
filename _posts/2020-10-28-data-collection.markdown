@@ -118,7 +118,7 @@ In the early game, focusing on only upgrades seems to be the inferior strategy. 
 
 ![m](/Resources/RandRandCardCompetitiveness.PNG)
 
-In the early game, focusing on only cards seems to be the superior strategy. However, when the score to win is about 520, the hybrid strategy starts beating card strategy.
+In the early game, focusing on only cards seems to be the superior strategy. However, when the score to win is about 5-20, the hybrid strategy starts beating card strategy.
 
 #### Comparison
 
