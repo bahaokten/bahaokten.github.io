@@ -129,6 +129,8 @@ Random vs Random Upgrade            |  Random vs Random Card
 
 The late-game benefit of upgrades can be seen taking effect in both Win Ratio graphs. Upgrades is an investment, so given enough time, they change the tide of the game. In comparison, the Random Vs Random Card Win Ratio graph suggests that cards are good for short term benefit when the number of rounds per game is fewer. 
 
+The overall high competitive scores suggest that, even though there are superior and inferior strategies, in short-cycles all strategies can be competitive and win.
+
 In conclusion, as the average number of rounds per game incrase, the card strategy and hybrid strategies start losing. Hybrid strategy is losing against upgrade strategy hints that the cost-benefit of using cards is perhaps imbalanced where the cost does not justify the potential benefit. This is something I will address next week.
 
 Next week I will make Random Upgrade AI play against Random Card AI to double-check this hypothesis.
