@@ -31,6 +31,16 @@ As can be seen by the results, random strategy was winning against all the revis
 
 The code above handles determining the winner when both players pick the same weapon. As can be seen in the code, the Left player had a huge advantage since the second else clause that is suppose to check if player R won the round had it a faulty conditional expression that would never let player R win.
 
+### Proving Starting Conditions Are Fair
+
+To prove that the starting conditions are fair for both players, I made Random AI play against itself 200 games with score to win set to 20.
+
+**These were the results**
+
+![m](/Resources/StatsRandRand.PNG)
+
+As can be seen from the results, the difference between the win ratios is small enough to be statistically insignificant over 200 games of Super Rock Paper Scissors. This hints that the starting conditions for both left and right players are fair and symmetrical.
+
 ### Proving Random Strategy Can Be Beaten
 
 Once I fixed the bug, I moved on to proving that the random strategy was not optimal. I think this is an important first step, because proving random strategy to be subpar to other strategies hints that the game can have interesting competitive decisions, which from a game balance standpoint is a neccessity for a 1v1 game to have.
@@ -73,6 +83,55 @@ The competitiveness score follows a similar trend where ScissorLover's performan
 #### Observations and Conclusion
 
 This experiment not only proves that the game potentially consists of interesting competitive decisions, but also gives insight to what may be an optimal value for score to win where random strategy is deemed unviable.
+
+### Cards Vs Upgrades
+
+To see how impactful cards and upgrades are, I made Random AI play against altered versions of itself
+
+**Versions of Random AI and their behavior**
+
+* **Random AI (hybrid):** 
+    * Tries to buy a card 66% of the time. 
+    * Tries to upgrade 50% of the time.
+    * Chooses each weapon with 33.3% chance
+* **RandomUpgrade AI:** 
+    * *Never tries to buy a card
+    * Tries to buy an upgrade 33% of the time if the player has less than 5 coins
+    * Tries to buy an upgrade 100% of the time (prefers attack upgrade) if player has 5 or more coins
+    * Chooses each weapon with 33.3% chance
+* **RandomCard AI:**
+    * Tries to buy a card every round and use it
+    * Never tries to upgrade
+    * Chooses each weapon with 33.3% chance
+
+#### Random AI vs RandomUpgrade AI
+
+![m](/Resources/RandRandUpgradeWinRatio.PNG)
+
+![m](/Resources/RandRandUpgradeCompetitiveness.PNG)
+
+In the early game, focusing on only upgrades seems to be the inferior strategy. However, when the score to win is about 10-20, the upgrade strategy starts beating hybrid strategy.
+
+#### Random AI vs RandomCard AI
+
+![m](/Resources/RandRandCardWinRatio.PNG)
+
+![m](/Resources/RandRandCardCompetitiveness.PNG)
+
+In the early game, focusing on only cards seems to be the superior strategy. However, when the score to win is about 520, the hybrid strategy starts beating card strategy.
+
+#### Comparison
+
+Random vs Random Upgrade            |  Random vs Random Card
+:-------------------------:|:-------------------------:
+![m](/Resources/RandRandUpgradeWinRatio.PNG)  |  ![m](/Resources/RandRandCardWinRatio.PNG)
+![m](/Resources/RandRandUpgradeCompetitiveness.PNG) |  ![m](/Resources/RandRandCardCompetitiveness.PNG)
+
+The late-game benefit of upgrades can be seen taking effect in both Win Ratio graphs. Upgrades is an investment, so given enough time, they change the tide of the game. In comparison, the Random Vs Random Card Win Ratio graph suggests that cards are good for short term benefit when the number of rounds per game is fewer. 
+
+In conclusion, as the average number of rounds per game incrase, the card strategy and hybrid strategies start losing. Hybrid strategy is losing against upgrade strategy hints that the cost-benefit of using cards is perhaps imbalanced where the cost does not justify the potential benefit. This is something I will address next week.
+
+Next week I will make Random Upgrade AI play against Random Card AI to double-check this hypothesis.
 
 ### More AI and Using Python in Unity to Enable Creating Machine Learning Models
 
@@ -135,5 +194,5 @@ The implementation for base MLAI requires the use of Python as Python has much b
 | Sun | 4:30| 
 | Mon | 5:15| 
 | Tue | 4:15| 
-| Wed | 0|
-|TOTAL | 14:00| 
+| Wed | 2:00|
+|TOTAL | 16:00| 
