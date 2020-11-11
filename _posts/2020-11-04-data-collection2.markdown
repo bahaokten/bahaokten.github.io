@@ -57,6 +57,9 @@ The Random AI gradually starts winning because Tracker AI relies too much on car
 
 Next week I want to look into game length. In theory, games can last forever if both players are following an identical deterministic strategy. I want to explore the implications of having a constraint that disallows such scenarios.
 
+### Links
+
+**Github repo for Super Rock Paper Scissors: [Click Here](https://github.com/bahaokten/Research_RPC)**
 
 **Current Project Code Structure Of Super Rock Paper Scissors**
 

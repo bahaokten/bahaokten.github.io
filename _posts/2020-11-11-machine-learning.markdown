@@ -142,6 +142,10 @@ The Tie Breaker Trigger prevents indefinite stalemate chains by detecing when a 
 
 The tie breaker scenario could look compare total stats and/or coins of players to determine a winner. While this shrinks the possibility of having a truly random round to nearly zero, it does not completely eliminate the possibility of having indefinite stalemates. Since this scenario is rare enough, the round winner can be decided at random when compared stats of both players are equal. The introduction of randomness here is much better than the random nature of the Max Rounds approach with the example Sudden Death Scenario I talked about above. 
 
+### Links
+
+**Github repo for Super Rock Paper Scissors: [Click Here](https://github.com/bahaokten/Research_RPC)**
+
 **Current Project Code Structure Of Super Rock Paper Scissors**
 
 ![m](/Resources/CodeAmount5.PNG)
