@@ -156,7 +156,7 @@ These are the readings she suggested I look into:
 
 [*Methods for Empirical Game-Theoretic Analysis *](https://www.aaai.org/Papers/AAAI/2006/AAAI06-248.pdf)
 
-[Essentials of Game Theory*](http://www.gtessentials.org)
+[*Essentials of Game Theory*](http://www.gtessentials.org)
 
 [*Algorithmic Game Theory*](https://www.cs.cmu.edu/~sandholm/cs15-892F13/algorithmic-game-theory.pdf)
 
