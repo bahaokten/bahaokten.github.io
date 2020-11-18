@@ -1,0 +1,167 @@
+---
+layout: post
+title:  "Tweaking"
+date:   2020-11-18 01:30:37 -0400
+categories: Tweaking
+---
+
+### Unity Shenanigans Vol. 3
+
+Unity decided to stop working once again. Despite all my troubleshooting efforst, nothing seemed to get Unity working again until I reinstalled Unity and Unity Hub.
+
+![m](/Resources/unitybug.PNG) 
+
+
+### Readme.md
+
+I created a readme file for the project's github repo guiding people who might be interested in running and modifying the repo for their own research. The readme can be accessed [*here*](https://github.com/bahaokten/Research_RPC/blob/master/README.md)
+
+### Tie Breaking
+
+To solve the indefinite stalemate loops, I decided to go with the tie method I discussed last week.
+
+**To recap:**
+
+The Tie Breaker Trigger prevents indefinite stalemate chains by detecing when a stalemate chain of X rounds occurs, and applying a tie breaking scenario to enforce a round winner on the third consecutive stalemate round. This limits max game length of a single game to 
+
+```MAXGAMELENGTH = (ScoreToWin + (ScoreToWin - 1)) * ((MaxStalemateChainLength - 1) + 1)```
+
+The tie breaker scenario could look compare total stats and/or coins of players to determine a winner. While this shrinks the possibility of having a truly random round to nearly zero, it does not completely eliminate the possibility of having indefinite stalemates. Since this scenario is rare enough, the round winner can be decided at random when compared stats of both players are equal. The introduction of randomness here is much better than the random nature of the Max Rounds approach with the example Sudden Death Scenario I talked about above. 
+
+#### **Tie Breaker Logic**
+
+The Tie Breaker tries to break the tie as much as possible with the following steps:
+
+* It first considers the total stats. The player with the highest stats win
+
+* If both players have equal total stats, then the player with most coins wins
+
+* If both players have equal coins, then the player with most total upgrades and cards wins
+
+* If both players have equal total upgrades and cards, then the player with the higher score wins
+
+* If both players have equal score and there is only 1 human player, then the human player wins
+
+* If there are no human players or both players are human, then a random player wins
+
+#### **Tie Breaker Code**
+
+```cs
+public WinnerData StalemateStreakBreaker(WeaponController LWeapon, WeaponController RWeapon)
+{
+    float LTotWeaponStats = playerControllerL.GetTotalWeaponStats();
+    float RTotWeaponStats = playerControllerR.GetTotalWeaponStats();
+    //The player with highest total stats win
+    if (LTotWeaponStats > RTotWeaponStats)
+    {
+        return new WinnerData(Player.L, -1, LWeapon.weaponType, RWeapon.weaponType);
+    }
+    else if (RTotWeaponStats > LTotWeaponStats)
+    {
+        return new WinnerData(Player.R, -1, LWeapon.weaponType, RWeapon.weaponType);
+    }
+    else
+    {
+        //The player with most coins win
+        if (playerControllerL.coins > playerControllerR.coins)
+        {
+            return new WinnerData(Player.L, -1, LWeapon.weaponType, RWeapon.weaponType);
+        }
+        else if (playerControllerR.coins > playerControllerL.coins)
+        {
+            return new WinnerData(Player.R, -1, LWeapon.weaponType, RWeapon.weaponType);
+        }
+        else
+        {
+            //The player with most upgrades and cards win
+            int totLCardUpgrades = playerControllerL.GetTotalCards() + playerControllerL.GetTotalUpgrades();
+            int totRCardUpgrades = playerControllerR.GetTotalCards() + playerControllerR.GetTotalUpgrades();
+            if (totLCardUpgrades > totRCardUpgrades)
+            {
+                return new WinnerData(Player.L, -1, LWeapon.weaponType, RWeapon.weaponType);
+            }
+            else if (totRCardUpgrades > totLCardUpgrades)
+            {
+                return new WinnerData(Player.R, -1, LWeapon.weaponType, RWeapon.weaponType);
+            }
+            else
+            {
+                //The player with higher score wins
+                if (playerControllerL.score > playerControllerR.score)
+                {
+                    return new WinnerData(Player.L, -1, LWeapon.weaponType, RWeapon.weaponType);
+                } 
+                else if (playerControllerR.score > playerControllerL.score)
+                {
+                    return new WinnerData(Player.R, -1, LWeapon.weaponType, RWeapon.weaponType);
+                } else
+                {
+                    //Human player wins
+                    if (GlobalVars.instance.LType == PlayerType.Human ^ GlobalVars.instance.RType == PlayerType.Human)
+                    {
+                        if (GlobalVars.instance.LType == PlayerType.Human)
+                        {
+                            return new WinnerData(Player.L, -1, LWeapon.weaponType, RWeapon.weaponType);
+                        }
+                        else
+                        {
+                            return new WinnerData(Player.R, -1, LWeapon.weaponType, RWeapon.weaponType);
+                        }
+                    }
+                    else
+                    {
+                        //Random player wins
+                        if (randObj.Next(0, 2) == 0)
+                        {
+                            return new WinnerData(Player.L, -1, LWeapon.weaponType, RWeapon.weaponType);
+                        } else
+                        {
+                            return new WinnerData(Player.R, -1, LWeapon.weaponType, RWeapon.weaponType);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+```
+
+#### **Tie Breaker Performance**
+
+The game length significantly decreased when Simp_ScissorLover plays against itself. Remember that ScissorLover only upgrades scissor, and chooses scissor 80% of the time.
+
+Pre Tie Breaking           |  Post Tie Breaking
+:-------------------------:|:-------------------------:
+![m](/Resources/ScissorScissorCompetitiveness.PNG)  |  ![m](/Resources/ScissorScissorCompetitivenessTieBreaker.PNG)
+
+#### **Previously Impossible Matchup**
+
+The Simp_ScissorLover2 AI chooses scissor 100% of the time, which previously meant that when Simp_ScissorLover2 plays against itself, the game would get stuck in an indefinite stalemate loop.
+
+With the tie breaker logic implemented, this matchup now results in valid games.
+
+![m](/Resources/Scissor2Scissor2Competitiveness.PNG)
+
+As it can be seen from the graph, the games now end with a definite winner. The competitiveness score goes now as Score To Win increases because after the first tie breaker results in a random winner, the game snowballs to the winner breaker's favor due to how Simp_ScissorLover2 works.
+
+### Interview with Sindhu Kutty
+
+TODO
+
+### Links
+
+**Github repo for Super Rock Paper Scissors: [Click Here](https://github.com/bahaokten/Research_RPC)**
+
+
+**Weekly Time Spent on Project SeeSaw**
+
+| Day  | Hours Spent |
+|:-:|:-:|
+| Thu | 0| 
+| Fri | 0| 
+| Sat | 2:00| 
+| Sun | 2:00| 
+| Mon | 0:00| 
+| Tue | 4:00| 
+| Wed | 4:00|
+|TOTAL | 12:00| 
