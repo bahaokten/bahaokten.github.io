@@ -146,7 +146,21 @@ As it can be seen from the graph, the games now end with a definite winner. The 
 
 ### Interview with Sindhu Kutty
 
-TODO
+Talked to University of Michigan Machine Learning professor Sindhu Kutty about how I can utilize ML and deep learning to create an adaptive AI.
+
+She suggested that I look into empirical game theory and using a multi agent system that utilizes game theory.
+
+These are the readings she suggested I look into:
+
+[*Multiagent Systems: Algorithmic, Game-Theoretic, and Logical Foundations*](http://www.masfoundations.org)
+
+[*Methods for Empirical Game-Theoretic Analysis *](https://www.aaai.org/Papers/AAAI/2006/AAAI06-248.pdf)
+
+[Essentials of Game Theory*](http://www.gtessentials.org)
+
+[*Algorithmic Game Theory*](https://www.cs.cmu.edu/~sandholm/cs15-892F13/algorithmic-game-theory.pdf)
+
+[*Mastering the game of Go without human knowledge*](https://www.nature.com/articles/nature24270)
 
 ### Links
 
