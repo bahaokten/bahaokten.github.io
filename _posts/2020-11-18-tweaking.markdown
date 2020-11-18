@@ -154,7 +154,7 @@ These are the readings she suggested I look into:
 
 [*Multiagent Systems: Algorithmic, Game-Theoretic, and Logical Foundations*](http://www.masfoundations.org)
 
-[*Methods for Empirical Game-Theoretic Analysis *](https://www.aaai.org/Papers/AAAI/2006/AAAI06-248.pdf)
+[*Methods for Empirical Game-Theoretic Analysis*](https://www.aaai.org/Papers/AAAI/2006/AAAI06-248.pdf)
 
 [*Essentials of Game Theory*](http://www.gtessentials.org)
 
