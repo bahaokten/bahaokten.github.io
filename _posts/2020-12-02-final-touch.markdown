@@ -7,11 +7,17 @@ categories: Summary
 
 ### Machine Learning Trial
 
+![m](/Resources/multiagentcover.gif)
+
 I read the chapters 6-7 of Multiagent Systems: Algorithmic, Game-Theoretic, and Logical Foundations by Yoav Shoham and Kevin Leyton-Brown to get a better idea of how I can implement empirical game theory and multi agent system that utilizes game theory.
+
+I spent half of this weeks on getting the machine learning agents working; however, empirical game theory was a completely new field for me so I couldn't get it to work with a 4-5 hour commitment. Although I was not able to implement machine learning this week, I do plan to finish what I started with a multi agent system that utilizes game theory.
 
 ### Getting Ready For Design Expo
 
 #### Expo Presentation
+
+![m](/Resources/presentation.PNG)
 
 Created presentation slides and speech for the expo.
 
@@ -41,13 +47,17 @@ The slides can be accessed [*here*](https://docs.google.com/presentation/d/1KIxl
 
 * Added Title
 
+**Statistics Excel Files**
+
+* Adjusted data analysis files for better accessibility.
+
 #### Builds
 
-The game can be downloaded here
+Super Rock Paper Scissors can be downloaded here
 
-**Windows** RPS.zip
+**Windows** [RPS_Windows.zip]({{ site.url }}/Download/RPS_Windows.zip)
 
-**Mac** RPS.zip
+**Mac** [RPS_Mac.app.zip]({{ site.url }}/Download/RPS_Mac.app.zip)
 
 **Weekly Time Spent on Project SeeSaw**
 
