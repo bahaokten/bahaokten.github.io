@@ -1,0 +1,29 @@
+---
+layout: post
+title:  "Closure"
+date:   2020-12-18 01:30:37 -0400
+categories: Summary
+---
+
+### The Journey
+
+Doing research on game balance started from my curiosity of hidden costs of balancing activities in game development. I wanted to know how balance techniques are used optimally to cut down costs and development time as well as create an intended experience for the players.
+
+To better test balance techniques, I created a modified version of Rock Paper Scissors called Super Rock Paper Scissors which had competitive mechanics and allowed for well-thought strategies. Then, I made multiple AI agents which would play the game against each other in unique and exhaustive ways. I created a logger which would collect in-game data and dump into meaningful chunks of information. I then used excel files to automatically analyze the collected data and output meaningful metrics. I used the metrics to make meaningful changes to the game and iteratively test the game to figure out "when" a metric could be considered balanced. Lastly, I created this blog to track my findings and notes on the journey of how I balanced Super Rock Paper Scissors.
+
+In the end, I realized that game balance begins in the earliest stages of design, and persists through all stages of development. Having a vision and goals for your game at all stages was crucial in order to validate balance changes. Despite the effectiveness of playtesting with human players, automating the game balance process through AI agents and data collection & analysis proved to be more cost effective and yielded meaningful game balance metrics comparable to playtesting with human players. 
+
+
+
+#### Builds
+
+**Github repo for Super Rock Paper Scissors: [Click Here](https://github.com/bahaokten/Research_RPC)**
+
+**Design Expo Presentation: [Click Here](https://docs.google.com/presentation/d/1KIxlCcPXlFsFMKIKDidg5zxQkw4Nng66l8Z7_c0HAKc/edit?usp=sharing)**
+
+
+**Download Links**
+
+**Windows [RPS_Windows.zip]({{ site.url }}/Download/RPS_Windows.zip)**
+
+**Mac [RPS_Mac.app.zip]({{ site.url }}/Download/RPS_Mac.app.zip)**
